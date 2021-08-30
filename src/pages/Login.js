@@ -1,9 +1,71 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import loginAction from '../actions';
 
 class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      isDisabled: true,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange({ target }) {
+    const { password, email } = this.state;
+    const MIN_PASSWORD_LENGTH = 4;
+    const VALID_EMAIL = /\S+@\S+\.\S+/;
+    const isEmailValid = VALID_EMAIL.test(email);
+    const isPasswordValid = password.length > MIN_PASSWORD_LENGTH;
+    const newStatus = !(isEmailValid && isPasswordValid);
+    this.setState({
+      [target.name]: target.value,
+      isDisabled: newStatus,
+    });
+  }
+
   render() {
-    return <div>Login</div>;
+    const { isDisabled } = this.state;
+    const { login } = this.props;
+    return (
+      <div className="login-form">
+        <input
+          name="email"
+          type="text"
+          onChange={ this.handleChange }
+          placeholder="Insira o email"
+          data-testid="email-input"
+        />
+        <input
+          name="password"
+          type="text"
+          placeholder="Insira a senha"
+          data-testid="password-input"
+          onChange={ this.handleChange }
+        />
+        <Link to="/carteira">
+          <button
+            disabled={ isDisabled ? 'disabled' : undefined }
+            type="button"
+            onClick={ () => login(this.state) }
+          >
+            Entrar
+          </button>
+        </Link>
+      </div>
+    );
   }
 }
 
-export default Login;
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+};
+const mapDispatchToProps = (dispatch) => ({
+  login: (state) => dispatch(loginAction(state)),
+});
+
+export default connect(null, mapDispatchToProps)(Login);
