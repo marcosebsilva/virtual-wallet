@@ -1,4 +1,3 @@
-// Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 import { ADD_EXPENSE, RECEIVE_CURRENCY, REQUEST_API } from '../actions';
 
 const INITIAL_STATE = {
@@ -7,7 +6,7 @@ const INITIAL_STATE = {
   isFetching: false,
 };
 
-function walletReducer(state = INITIAL_STATE, action) {
+export default function walletReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
   case REQUEST_API:
     return { ...state, isFetching: true };
@@ -16,7 +15,8 @@ function walletReducer(state = INITIAL_STATE, action) {
   case ADD_EXPENSE:
     return {
       ...state,
-      expenses: [...state.expenses,
+      expenses: [
+        ...state.expenses,
         { ...action.payload,
           id: state.expenses.length,
         }] };
@@ -24,5 +24,3 @@ function walletReducer(state = INITIAL_STATE, action) {
     return state;
   }
 }
-
-export default walletReducer;
