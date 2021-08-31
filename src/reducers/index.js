@@ -2,11 +2,11 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import user from './user';
-// import wallet from './wallet';
+import wallet from './wallet';
 
 const rootReducer = combineReducers({
   user,
-  // wallet,
+  wallet,
 });
 export const store = createStore(
   rootReducer,

@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { LabelInput, LabelSelect } from '../components/index';
+import LabelSelect from '../components/LabelSelect';
+import LabelInput from '../components/LabelInput';
+import CoinList from '../components/CoinList';
 
 class Wallet extends React.Component {
   render() {
@@ -16,7 +18,7 @@ class Wallet extends React.Component {
         <form>
           <LabelInput text="Valor" id="value" />
           <LabelInput text="Descrição" id="description" />
-          <LabelSelect text="Moeda" id="coin" type="default" />
+          <CoinList />
           <LabelSelect text="Método de pagamento" id="payment" type="payment" />
           <LabelSelect text="Tag" id="tag" type="tag" />
         </form>
@@ -27,8 +29,15 @@ class Wallet extends React.Component {
 
 Wallet.propTypes = {
   email: PropTypes.string.isRequired,
+
 };
+
 const mapStateToProps = (state) => ({
   email: state.user.email,
+  currencyList: state.wallet.currencies,
 });
+
+// const mapDispatchToProps = (dispatch) => ({
+//   fetchAPI: () => dispatch(fetchAPIAction()),
+// });
 export default connect(mapStateToProps)(Wallet);

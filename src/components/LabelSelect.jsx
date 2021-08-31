@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-export default class LabelSelect extends React.Component {
+class LabelSelect extends React.Component {
   render() {
     const { text, type } = this.props;
     switch (type) {
@@ -31,12 +32,7 @@ export default class LabelSelect extends React.Component {
       );
     default:
       return (
-        <label htmlFor={ type }>
-          { text }
-          <select name={ type } id={ type }>
-            <option>teste</option>
-          </select>
-        </label>
+        <p>Algo deu errado</p>
       );
     }
   }
@@ -44,5 +40,12 @@ export default class LabelSelect extends React.Component {
 
 LabelSelect.propTypes = {
   text: PropTypes.string.isRequired,
-  type: PropTypes.bool.isRequired,
+  type: PropTypes.string.isRequired,
 };
+
+const mapStateToProps = (state) => ({
+  currencies: state.wallet.currencies,
+  isFetching: state.wallet.isFetching,
+});
+
+export default connect(mapStateToProps)(LabelSelect);
