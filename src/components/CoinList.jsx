@@ -10,15 +10,15 @@ class CoinList extends React.Component {
   }
 
   render() {
-    const { currencies, isFetching } = this.props;
+    const { currencies, isFetching, onChange, id } = this.props;
     return (
-      <label htmlFor="coins">
+      <label htmlFor={ id }>
         Moedas
-        <select id="coins">
+        <select id={ id } onChange={ onChange }>
           {isFetching ? <option>Loading</option>
             : currencies.filter((currency) => currency !== 'USDT')
               .map((currency, index) => (
-                <option key={ index }>
+                <option value={ currency } key={ index }>
                   {currency}
                 </option>
               ))}
@@ -32,6 +32,8 @@ CoinList.propTypes = {
   currencies: PropTypes.arrayOf(String).isRequired,
   isFetching: PropTypes.bool.isRequired,
   fillCurrencies: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({

@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 
 class LabelSelect extends React.Component {
   render() {
-    const { text, type } = this.props;
-    switch (type) {
-    case 'payment':
+    const { text, id, onChange } = this.props;
+    switch (id) {
+    case 'method':
       return (
-        <label htmlFor={ type }>
+        <label htmlFor={ id } onChange={ onChange }>
           { text }
-          <select name={ type } id={ type }>
+          <select name={ id } id={ id }>
             <option>Dinheiro</option>
             <option>Cartão de crédito</option>
             <option>Cartão de débito</option>
@@ -19,9 +19,9 @@ class LabelSelect extends React.Component {
       );
     case 'tag':
       return (
-        <label htmlFor={ type }>
+        <label htmlFor={ id }>
           { text }
-          <select name={ type } id={ type }>
+          <select name={ id } id={ id } onChange={ onChange }>
             <option>Alimentação</option>
             <option>Lazer</option>
             <option>Trabalho</option>
@@ -40,7 +40,8 @@ class LabelSelect extends React.Component {
 
 LabelSelect.propTypes = {
   text: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

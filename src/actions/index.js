@@ -3,6 +3,7 @@ export const LOGIN = 'LOGIN';
 export const REQUEST_API = 'REQUEST_API';
 export const RECEIVE_CURRENCY = 'RECEIVE_CURRENCY';
 export const API_ADDRESS = 'https://economia.awesomeapi.com.br/json/all';
+export const ADD_EXPENSE = 'ADD_EXPENSE';
 
 const login = ({ email }) => ({
   type: LOGIN,
@@ -25,6 +26,20 @@ export function fetchAPI() {
     dispatch(requestAPI());
     const currency = await (await fetch(API_ADDRESS)).json();
     dispatch(receiveCurrency(currency));
+  };
+}
+const addExpense = (state, cotation) => ({
+  type: ADD_EXPENSE,
+  payload: {
+    ...state,
+    exchangeRates: { ...cotation },
+  },
+});
+
+export function fetchCotation(state) {
+  return async (dispatch) => {
+    const currencyExchange = await (await fetch(API_ADDRESS)).json();
+    dispatch(addExpense(state, currencyExchange));
   };
 }
 
