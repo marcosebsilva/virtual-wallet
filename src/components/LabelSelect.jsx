@@ -10,7 +10,11 @@ class LabelSelect extends React.Component {
       return (
         <label htmlFor={ id } onChange={ onChange }>
           { text }
-          <select name={ id } id={ id }>
+          <select
+            name={ id }
+            id={ id }
+            className="c-expense-form__select"
+          >
             <option>Dinheiro</option>
             <option>Cartão de crédito</option>
             <option>Cartão de débito</option>
@@ -21,7 +25,12 @@ class LabelSelect extends React.Component {
       return (
         <label htmlFor={ id }>
           { text }
-          <select name={ id } id={ id } onChange={ onChange }>
+          <select
+            name={ id }
+            id={ id }
+            onChange={ onChange }
+            className="c-expense-form__select"
+          >
             <option>Alimentação</option>
             <option>Lazer</option>
             <option>Trabalho</option>

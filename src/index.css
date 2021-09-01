@@ -1,4 +1,71 @@
-.login-form {
+* {
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+header {
+  background-color: #2A0944;
+  color: white;
+  justify-content: space-between;
   display: flex;
-  flex-direction: column;
+  padding: 50px;
+  height: 100px;
+  align-items: center;
+  /* generated from https://coolors.co/gradient-maker/5885af-8af4fe */
+}
+
+h1 {
+  min-width: 60%;
+}
+.c-total {
+  display: flex;
+  align-items: center;
+}
+
+.c-total > h2 {
+  margin-left: 20px;
+}
+
+.c-total__currency {
+  font-size: 20px;
+  background-color: #FEC260;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.c-expense-form {
+  display: flex;
+  padding: 0 300px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #3B185F;
+  height: 5vh;
+}
+
+.c-expense-form__button {
+  background-color: #FEC260;
+  color: white;
+  min-height: 100%;
+}
+
+.c-expense-form__input, .c-expense-form__select {
+  margin-left: 10px;
+}
+
+table {
+  color: white;
+  min-width: 100vw;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.c-wallet__row > * {
+  border: 1px solid white;
+  background-color: #2A0944;
+}
+.c-wallet__headers > th {
+  background-color: #A12568;
+  height: 40px;
+  border: 1px solid white;
 }

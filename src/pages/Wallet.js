@@ -12,17 +12,24 @@ class Wallet extends React.Component {
       .reduce((acc, curr) => (
         acc + (curr.value * curr.exchangeRates[curr.currency].ask)), 0);
     return (
-      <header>
-        <p data-testid="email-field">
-          { email }
-        </p>
-        <p data-testid="total-field">
-          { correctValue }
-        </p>
-        <p data-testid="header-currency-field">BRL</p>
+      <>
+        <header>
+          <h1 data-testid="email-field">
+            { email }
+          </h1>
+          <div className="c-total">
+            <h2 data-testid="total-field" className="c-total__value">
+              $
+              { correctValue.toFixed(2) }
+            </h2>
+            <h2 data-testid="header-currency-field" className="c-total__currency">
+              BRL
+            </h2>
+          </div>
+        </header>
         <ExpenseForm />
         <Table />
-      </header>
+      </>
     );
   }
 }

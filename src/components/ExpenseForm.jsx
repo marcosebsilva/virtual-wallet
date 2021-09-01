@@ -29,7 +29,7 @@ class ExpenseForm extends React.Component {
   render() {
     const { addDispense } = this.props;
     return (
-      <form>
+      <form className="c-expense-form">
         <LabelInput text="Valor" id="value" onChange={ this.handleChange } />
         <LabelInput text="Descrição" id="description" onChange={ this.handleChange } />
         <CoinList id="currency" onChange={ this.handleChange } />
@@ -40,6 +40,7 @@ class ExpenseForm extends React.Component {
         />
         <LabelSelect text="Tag" id="tag" onChange={ this.handleChange } />
         <button
+          className="c-expense-form__button"
           type="button"
           onClick={ () => addDispense(this.state) }
         >

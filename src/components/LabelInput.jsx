@@ -8,6 +8,7 @@ export default class LabelInput extends React.Component {
       <label htmlFor={ id }>
         { text }
         <input
+          className="c-expense-form__input"
           type="text"
           id={ id }
           name={ id }

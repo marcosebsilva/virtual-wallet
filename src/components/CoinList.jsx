@@ -14,7 +14,11 @@ class CoinList extends React.Component {
     return (
       <label htmlFor={ id }>
         Moedas
-        <select id={ id } onChange={ onChange }>
+        <select
+          id={ id }
+          onChange={ onChange }
+          className="c-expense-form__select"
+        >
           {isFetching ? <option>Loading</option>
             : currencies.filter((currency) => currency !== 'USDT')
               .map((currency, index) => (

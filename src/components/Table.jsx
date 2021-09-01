@@ -15,8 +15,8 @@ class Table extends React.Component {
       ? (
         <>
           <table>
-            <tbody>
-              <tr>
+            <tbody className="c-wallet">
+              <tr className="c-wallet__headers">
                 {headers.map((header, index) => <th key={ index }>{header}</th>)}
                 {/* sugestao braba do José Demeneghi */}
               </tr>
@@ -27,8 +27,8 @@ class Table extends React.Component {
       )
       : (
         <table>
-          <tbody>
-            <tr>
+          <tbody className="c-wallet">
+            <tr className="c-wallet__headers">
               {headers.map((header, index) => <th key={ index }>{header}</th>)}
               {/* sugestao braba do José Demeneghi */}
             </tr>

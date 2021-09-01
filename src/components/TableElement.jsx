@@ -13,7 +13,7 @@ export default class TableElement extends React.Component {
       method,
       value } = expense;
     return (
-      <tr>
+      <tr className="c-wallet__row">
         <td>{description}</td>
         <td>{tag}</td>
         <td>{method}</td>
