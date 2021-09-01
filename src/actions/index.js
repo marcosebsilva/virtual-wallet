@@ -4,6 +4,7 @@ export const REQUEST_API = 'REQUEST_API';
 export const RECEIVE_CURRENCY = 'RECEIVE_CURRENCY';
 export const API_ADDRESS = 'https://economia.awesomeapi.com.br/json/all';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 const login = ({ email }) => ({
   type: LOGIN,
@@ -42,5 +43,10 @@ export function fetchCotation(state) {
     dispatch(addExpense(state, currencyExchange));
   };
 }
+
+export const deleteExpense = (id) => ({
+  type: DELETE_EXPENSE,
+  id,
+});
 
 export default login;
