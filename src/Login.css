@@ -45,7 +45,7 @@ body {
 }
 
 /* bring elements forward */
-.c-login-form__form , .c-login-form__buttons , .c-login__contact {
+.login-form , .c-login-form__buttons , .c-login__contact {
   z-index: 1000;
 }
 
@@ -60,28 +60,28 @@ body {
   padding: 25px 200px 46px 49px;
 }
 
-.c-login-form__logo {
+.logo {
   align-items: center;
   display: flex;
 }
 
-.c-login-form__logo h2 {
+.logo__text {
   font-family: Ramabhadra, sans-serif;
   font-size: 36px;
   font-weight: 400;
   margin-left: 8px;
 }
 
-.c-login-form__form {
+.login-form {
   font-family: Mukta Mahee, sans-serif;
 }
 
-.c-login-form__form h1 {
+.login-form__title {
   font-size: 96px;
   font-weight: 400;
 }
 
-.c-login-form__form h1:after {
+.login-form__title:after {
   background-color: white;
   content: '';
   display: inline-block;
@@ -92,69 +92,74 @@ body {
   width: 67px;
 }
 
-.c-login-form__form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.c-login-form__form label .login-text-input {
+.login-form__text-input {
   border-radius: 5px;
   height: 30px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
-.c-login-form__buttons {
+.c-buttons {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 
-.c-login__contact div {
-  background-color: red;
-  border-radius: 50%;
-  height: 80px;
-  margin: auto;
-  width: 80px;
+.c-buttons__link {
+  text-decoration: none;
 }
 
-.c-login-form__buttons div {
+.c-buttons__link:visited {
+  color: white;
+}
+
+.c-buttons__link:hover {
+  color: rgb(207, 206, 206);
+}
+
+.main-buttons {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
   width: 100%;
 }
 
-.c-login-form__buttons button {
+.main-buttons__signin , .main-buttons__signup {
   border-radius: 5px;
   height: 41px;
   width: 164px;
 }
 
-.c-login-form__buttons a:first-child button {
+.main-buttons__signin {
   color: white;
   transition: 0.2s;
 }
 
-.c-login-form__buttons a:last-child button {
+.main-buttons__signup {
   background-color: transparent;
   border: 1px solid white;
   color: white;
   transition: 0.1s;
 }
 
-.c-login-form__buttons a:first-child button:disabled {
+.main-buttons__signin:disabled {
   background-color: #968f88;
   opacity: 0.6;
 }
 
-.c-login-form__buttons a:first-child button:enabled {
+.main-buttons__signin:enabled {
   background-color: #f27405;
 }
 
-.c-login-form__buttons a:last-child button:hover {
+.main-buttons__signup:hover {
   background-color: white;
   border: 1px solid white;
   color: black;
+}
+
+.main-buttons__signin:enabled:hover {
+  background-color: #be600d;
 }
 
 .c-login__contact {
@@ -167,3 +172,10 @@ body {
   padding: 80px 0;
 }
 
+.c-login__contact div {
+  background-color: red;
+  border-radius: 50%;
+  height: 80px;
+  margin: auto;
+  width: 80px;
+}

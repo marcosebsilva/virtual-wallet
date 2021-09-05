@@ -11,9 +11,11 @@ export default class Login extends React.Component {
         <span />
         <span />
         <section className="c-login-form">
-          <div className="c-login-form__logo">
-            <i><img src={ logo } alt="Smartphone wallet logo" /></i>
-            <h2>e-wallet</h2>
+          <div className="logo">
+            <i className="logo__icon">
+              <img src={ logo } alt="Smartphone wallet logo" />
+            </i>
+            <h2 className="logo__text">e-wallet</h2>
           </div>
           <ConnectedLoginForm />
         </section>

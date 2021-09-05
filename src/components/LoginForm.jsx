@@ -36,16 +36,16 @@ export class LoginForm extends React.Component {
     const { login } = this.props;
     return (
       <>
-        <form className="c-login-form__form">
-          <h1>Login</h1>
+        <form className="login-form">
+          <h1 className="login-form__title">Login</h1>
           <LabelInput
             id="email"
             text="Email"
             onChange={ this.handleChange }
-            className="login-text-input"
+            className="login-form__text-input"
           />
           <LabelInput
-            className="login-text-input"
+            className="login-form__text-input"
             id="password"
             text="Senha"
             onChange={ this.handleChange }
@@ -53,10 +53,11 @@ export class LoginForm extends React.Component {
           />
           <LabelSelect id="remember-me" text="Lembrar de mim" />
         </form>
-        <div className="c-login-form__buttons">
-          <div>
+        <div className="c-buttons">
+          <div className="main-buttons">
             <Link to="/carteira">
               <button
+                className="main-buttons__signin"
                 disabled={ isDisabled ? 'disabled' : undefined }
                 type="button"
                 onClick={ () => login(this.state) }
@@ -66,13 +67,14 @@ export class LoginForm extends React.Component {
             </Link>
             <Link to="/cadastro">
               <button
+                className="main-buttons__signup"
                 type="button"
               >
                 Cadastrar
               </button>
             </Link>
           </div>
-          <a href="www.google.com">Esqueceu sua senha?</a>
+          <a className="c-buttons__link" href="www.google.com">Esqueceu sua senha?</a>
         </div>
       </>
     );
