@@ -41,16 +41,23 @@ class LabelSelect extends React.Component {
       );
     default:
       return (
-        <p>Algo deu errado</p>
+        <label htmlFor={ id }>
+          <input type="checkbox" name={ id } id={ id } />
+          { text }
+        </label>
       );
     }
   }
 }
 
+LabelSelect.defaultProps = {
+  onChange: undefined,
+};
+
 LabelSelect.propTypes = {
   text: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({

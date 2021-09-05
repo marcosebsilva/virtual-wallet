@@ -32,9 +32,13 @@ class CoinList extends React.Component {
   }
 }
 
+CoinList.defaultProps = {
+  isFetching: false,
+};
+
 CoinList.propTypes = {
   currencies: PropTypes.arrayOf(String).isRequired,
-  isFetching: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool,
   fillCurrencies: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,

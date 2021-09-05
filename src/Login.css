@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@200;300;400;500;600;700;800&family=Ramabhadra&display=swap') ;
+
+body {
+  background-image: url('./images/background_login-cadastro\ 1.png');
+}
+
+* {
+  border: 0;
+}
+
+.c-login {
+  border-radius: 10px;
+  box-shadow: -3px 4px 0 white;
+  display: flex;
+  height: 550px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+}
+
+.c-login span:nth-child( 1 ) {
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  height: 75px;
+  left: 28%;
+  opacity: 0.2;
+  position: absolute;
+  top: 21%;
+  width: 75px;
+}
+
+.c-login span:nth-child( 2 ) {
+  background-color: white;
+  border-radius: 50%;
+  bottom: -30%;
+  height: 532px;
+  opacity: 0.2;
+  pointer-events: none;
+  position: absolute;
+  right: -15%;
+  width: 532px;
+}
+
+/* bring elements forward */
+.c-login-form__form , .c-login-form__buttons , .c-login__contact {
+  z-index: 1000;
+}
+
+.c-login-form {
+  background: linear-gradient(90.61deg, #55637d 0.5%, #2e3b57 99.5%);
+  background-color: #999191;
+  border-radius: 10px 0 0 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 87.5%;
+  padding: 25px 200px 46px 49px;
+}
+
+.c-login-form__logo {
+  align-items: center;
+  display: flex;
+}
+
+.c-login-form__logo h2 {
+  font-family: Ramabhadra, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.c-login-form__form {
+  font-family: Mukta Mahee, sans-serif;
+}
+
+.c-login-form__form h1 {
+  font-size: 96px;
+  font-weight: 400;
+}
+
+.c-login-form__form h1:after {
+  background-color: white;
+  content: '';
+  display: inline-block;
+  height: 2px;
+
+  /* 2% extra to align with the I */
+  transform: translate(-102%, 6px);
+  width: 67px;
+}
+
+.c-login-form__form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.c-login-form__form label .login-text-input {
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+}
+
+.c-login-form__buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-login__contact div {
+  background-color: red;
+  border-radius: 50%;
+  height: 80px;
+  margin: auto;
+  width: 80px;
+}
+
+.c-login-form__buttons div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.c-login-form__buttons button {
+  border-radius: 5px;
+  height: 41px;
+  width: 164px;
+}
+
+.c-login-form__buttons a:first-child button {
+  color: white;
+  transition: 0.2s;
+}
+
+.c-login-form__buttons a:last-child button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  transition: 0.1s;
+}
+
+.c-login-form__buttons a:first-child button:disabled {
+  background-color: #968f88;
+  opacity: 0.6;
+}
+
+.c-login-form__buttons a:first-child button:enabled {
+  background-color: #f27405;
+}
+
+.c-login-form__buttons a:last-child button:hover {
+  background-color: white;
+  border: 1px solid white;
+  color: black;
+}
+
+.c-login__contact {
+  background-color: #f29f05;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  justify-content: space-around;
+  padding: 80px 0;
+}
+
