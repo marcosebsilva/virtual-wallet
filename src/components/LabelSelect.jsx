@@ -42,7 +42,11 @@ class LabelSelect extends React.Component {
     default:
       return (
         <label htmlFor={ id }>
-          <input type="checkbox" name={ id } id={ id } />
+          <input
+            type="checkbox"
+            name={ id }
+            id={ id }
+          />
           { text }
         </label>
       );

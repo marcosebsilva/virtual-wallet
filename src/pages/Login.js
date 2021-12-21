@@ -8,8 +8,8 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className="c-login">
-        <span />
-        <span />
+        <span className="background-small-circle" />
+        <span className="background-big-circle" />
         <section className="c-login-form">
           <div className="logo">
             <i className="logo__icon">

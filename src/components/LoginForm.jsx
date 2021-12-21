@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import loginAction from '../actions';
 import LabelInput from './LabelInput';
-import LabelSelect from './LabelSelect';
 
 export class LoginForm extends React.Component {
   constructor() {
@@ -51,14 +50,13 @@ export class LoginForm extends React.Component {
             onChange={ this.handleChange }
             type="password"
           />
-          <LabelSelect id="remember-me" text="Lembrar de mim" />
         </form>
         <div className="c-buttons">
           <div className="main-buttons">
             <Link to="/carteira">
               <button
                 className="main-buttons__signin"
-                disabled={ isDisabled ? 'disabled' : undefined }
+                disabled={ isDisabled }
                 type="button"
                 onClick={ () => login(this.state) }
               >
