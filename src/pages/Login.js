@@ -20,14 +20,14 @@ export default class Login extends React.Component {
           <ConnectedLoginForm />
         </section>
         <section className="c-login__contact">
-          <a href="https://github.com/marcosebsilva" target="_blank" rel="noreferrer">
+          <a href="https://github.com/marcosebsilva" target="_blank" rel="noopener noreferrer">
             <img
               src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
               alt="github icon"
               href="google.com"
             />
           </a>
-          <a href="https://www.linkedin.com/in/marcosestevaobs/" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/marcosestevaobs/" target="_blank" rel="noopener noreferrer">
             <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="linkedin icon" />
           </a>
         </section>
